@@ -4,14 +4,16 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LiveEventsCarousel, type LiveEvent } from "@/components/live-events-carousel";
+import { ReviewLinksButton } from "@/components/review-links-button";
 import { getDishes, getLiveEvents } from "@/lib/queries";
 
 export const revalidate = 60;
 
 const navigation = [
   { label: "Menu", href: "#menu" },
-  { label: "Gallery", href: "#gallery" },
   { label: "Events", href: "#events" },
+  { label: "Reviews", href: "#testimonials" },
+
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,17 +21,17 @@ const navigation = [
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com",
+    href: "https://www.facebook.com/FalconCafeLounge/",
     icon: faFacebookF,
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/falcon.dine.lounge/",
     icon: faInstagram,
   },
   {
     name: "Twitter",
-    href: "https://www.twitter.com",
+    href: "https://twitter.com/falcondine",
     icon: faXTwitter,
   },
 ];
@@ -136,7 +138,7 @@ const restaurantSchema = {
     "A modern dining destination featuring signature dishes, table reservations, and weekly live events.",
   servesCuisine: ["International", "Fusion", "Vegan"],
   priceRange: "$$",
-  telephone: "+1-555-0134",
+  telephone: "0172 258 4965",
   address: {
     "@type": "PostalAddress",
     streetAddress: "245 Flavor Street",
@@ -200,8 +202,18 @@ export default async function Home() {
 
       <header className="sticky top-0 z-50 border-b border-[#f1e2d3] bg-[#fffaf3]/95 backdrop-blur-sm">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
-          <a href="#home" className="text-2xl font-bold tracking-wide text-[#311f09]">
-            RESTAURANT
+          <a href="#home" className="flex items-center gap-3">
+            <Image
+              src="/logo/logo.png"
+              alt="Falcon Cafe & Lounge logo"
+              width={55}
+              height={55}
+              className="object-contain"
+              priority
+            />
+            <span className="text-xl font-bold tracking-wide text-[#311f09]">
+              Falcon Cafe & Lounge
+            </span>
           </a>
 
           <nav aria-label="Primary" className="hidden gap-8 md:flex">
@@ -216,7 +228,7 @@ export default async function Home() {
             ))}
           </nav>
 
-          <a href="#reservation" className={primaryButtonClass}>
+          <a href="https://www.zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/book" target="_blank" rel="noopener noreferrer" className={primaryButtonClass}>
             Book a table
           </a>
         </div>
@@ -233,18 +245,18 @@ export default async function Home() {
                 Fresh flavor daily
               </p>
               <h1 className="mt-6 text-5xl font-semibold leading-tight text-[#311f09] sm:text-6xl">
-                We provide the best food for you
+                The Perfect Landing for Good Times
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#5f4b3a]">
                 Discover handcrafted meals made from seasonal ingredients and
                 served in a warm atmosphere where every table feels special.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a href="#reservation" className={primaryButtonClass}>
+                <a href="https://www.zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/book" target="_blank" rel="noopener noreferrer" className={primaryButtonClass}>
                   Book a table
                 </a>
                 <a href="#menu" className={secondaryButtonClass}>
-                  Menu
+                  Our Signature Dishes
                 </a>
               </div>
               <div className="mt-10 flex items-center gap-4 text-[#8d5f34]">
@@ -266,7 +278,7 @@ export default async function Home() {
             <div className="relative">
               <div className="relative h-[440px] overflow-hidden rounded-[2.25rem] border border-[#edd7c2] bg-[#fbe7d1] shadow-[0_24px_80px_rgba(49,31,9,0.15)] sm:h-[560px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/main_image.png"
                   alt="Chef serving a fresh plate in restaurant ambience"
                   fill
                   className="object-cover"
@@ -282,6 +294,60 @@ export default async function Home() {
                   Crispy herb chicken bowl
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-20 sm:py-24">
+          <div className="mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1fr_0.9fr]">
+            <div className="relative h-[380px] overflow-hidden rounded-4xl border border-[#edd9c6] shadow-[0_20px_60px_rgba(49,31,9,0.12)] sm:h-[460px]">
+              <Image
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+                alt="Restaurant interior with plated dishes"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <p className="inline-flex rounded-full bg-[#fff0e0] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#bc8a5f]">
+                Since 2018
+              </p>
+              <h2 className="mt-5 text-4xl font-semibold text-[#311f09] sm:text-5xl">
+                Welcome
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#5f4b3a]">
+                We blend local ingredients with global culinary techniques to
+                create unforgettable food moments. From intimate dinners to
+                family celebrations, our team is here to make every visit feel
+                like home.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-4">
+                <a href="https://www.zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/book" target="_blank" rel="noopener noreferrer" className={primaryButtonClass}>
+                  Book a table
+                </a>
+                <a href="#menu" className={secondaryButtonClass}>
+                  Menu
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="events" className="bg-[#fef5eb] py-20 sm:py-24">
+          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-4xl font-semibold text-[#311f09] sm:text-5xl">
+                Live Events at Falcon
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-[#5f4b3a]">
+                Join us for unforgettable evenings of music, tastings, and
+                curated dining experiences throughout the week.
+              </p>
+            </div>
+
+            <div className="mt-12">
+              <LiveEventsCarousel events={liveEvents} />
             </div>
           </div>
         </section>
@@ -325,63 +391,30 @@ export default async function Home() {
                 </article>
               ))}
             </div>
+
+            {/* View full menu banner — links to the complete Zomato menu */}
+            <a
+              href="http://zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/menu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-16 flex items-center justify-center gap-3 rounded-2xl border border-[#edd9c6] bg-white px-8 py-5 shadow-[0_10px_30px_rgba(49,31,9,0.06)] transition-all duration-300 hover:border-[#ea6d27] hover:shadow-[0_14px_40px_rgba(234,109,39,0.12)]"
+            >
+              <span className="text-lg font-semibold text-[#311f09] transition-colors group-hover:text-[#ea6d27]">
+                View Full Menu
+              </span>
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#ea6d27] text-white transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
           </div>
         </section>
 
-        <section id="about" className="py-20 sm:py-24">
-          <div className="mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1fr_0.9fr]">
-            <div className="relative h-[380px] overflow-hidden rounded-4xl border border-[#edd9c6] shadow-[0_20px_60px_rgba(49,31,9,0.12)] sm:h-[460px]">
-              <Image
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
-                alt="Restaurant interior with plated dishes"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              <p className="inline-flex rounded-full bg-[#fff0e0] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#bc8a5f]">
-                Since 2010
-              </p>
-              <h2 className="mt-5 text-4xl font-semibold text-[#311f09] sm:text-5xl">
-                Welcome to Our Restaurant
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-[#5f4b3a]">
-                We blend local ingredients with global culinary techniques to
-                create unforgettable food moments. From intimate dinners to
-                family celebrations, our team is here to make every visit feel
-                like home.
-              </p>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <a href="#reservation" className={primaryButtonClass}>
-                  Book a table
-                </a>
-                <a href="#menu" className={secondaryButtonClass}>
-                  Menu
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
-        <section id="events" className="bg-[#fef5eb] py-20 sm:py-24">
-          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-4xl font-semibold text-[#311f09] sm:text-5xl">
-                Live Events at Falcon
-              </h2>
-              <p className="mt-4 text-lg leading-8 text-[#5f4b3a]">
-                Join us for unforgettable evenings of music, tastings, and
-                curated dining experiences throughout the week.
-              </p>
-            </div>
 
-            <div className="mt-12">
-              <LiveEventsCarousel events={liveEvents} />
-            </div>
-          </div>
-        </section>
+        
 
+        
         <section id="testimonials" className="py-20 sm:py-24">
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
             <div className="text-center">
@@ -428,15 +461,13 @@ export default async function Home() {
               ))}
             </div>
 
-            <div className="mt-9 flex justify-center gap-2">
-              <span className="h-2.5 w-8 rounded-full bg-[#ea6d27]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#e5d0bd]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#e5d0bd]" />
+            <div className="mt-10 flex justify-center">
+              <ReviewLinksButton />
             </div>
           </div>
         </section>
 
-        <section id="reservation" className="bg-[#fef5eb] py-20 sm:py-24">
+        {/* <section id="reservation" className="bg-[#fef5eb] py-20 sm:py-24">
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
             <div className="overflow-hidden rounded-4xl border border-[#edd9c6] bg-[#fff4e8] p-8 text-center shadow-[0_16px_50px_rgba(49,31,9,0.1)] sm:p-12">
               <h2 className="mx-auto max-w-4xl text-3xl font-semibold leading-tight text-[#311f09] sm:text-5xl">
@@ -465,14 +496,23 @@ export default async function Home() {
               </form>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <footer id="contact" className="border-t border-[#f0dfcf] py-16">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-[1.2fr_repeat(3,1fr)]">
           <div>
-            <a href="#home" className="text-2xl font-bold tracking-wide text-[#311f09]">
-              RESTAURANT
+            <a href="#home" className="flex items-center gap-3">
+              <Image
+                src="/logo/logo.png"
+                alt="Falcon Cafe & Lounge logo"
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+              <span className="text-xl font-bold tracking-wide text-[#311f09]">
+                Falcon Cafe & Lounge
+              </span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#5f4b3a]">
               We serve memorable food and warm hospitality. Learn more and
@@ -482,10 +522,8 @@ export default async function Home() {
               Opening hours
             </h3>
             <p className="mt-3 text-sm text-[#5f4b3a]">
-              Monday - Friday: 8:00 AM to 9:00 PM
+              Monday - Sunday: 8:00 AM to 9:00 PM
             </p>
-            <p className="text-sm text-[#5f4b3a]">Saturday: 8:00 AM to 9:00 PM</p>
-            <p className="text-sm text-[#5f4b3a]">Sunday: Closed</p>
           </div>
 
           <div>
@@ -535,13 +573,22 @@ export default async function Home() {
             <p className="mt-6 text-sm text-[#5f4b3a]">
               hello@falconrestaurant.com
             </p>
-            <p className="text-sm text-[#5f4b3a]">+1 (555) 013-4 567</p>
+            <p className="text-sm text-[#5f4b3a]">+0172 258 4965</p>
           </div>
         </div>
 
         <div className="mx-auto mt-10 flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 border-t border-[#f0dfcf] px-5 pt-6 text-sm text-[#7c624d] sm:px-8">
           <p>{currentYear} Falcon Restaurant. All rights reserved.</p>
-          <p>Terms of Service | Privacy Policy</p>
+          <div className="flex items-center gap-3">
+            <p>Terms of Service | Privacy Policy</p>
+            <span className="text-[#d9b493]">·</span>
+            <a
+              href="/studio"
+              className="transition hover:text-[#ea6d27]"
+            >
+              Manage Site
+            </a>
+          </div>
         </div>
       </footer>
     </div>

@@ -148,7 +148,7 @@ export function LiveEventsCarousel({ events }: LiveEventsCarouselProps) {
               <FontAwesomeIcon icon={faArrowRight} className="ml-2" aria-hidden />
             </button>
             <a
-              href="#reservation"
+              href="https://www.zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/book"
               className="rounded-full bg-[#ea6d27] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#d85e1e]"
             >
               Reserve for event
