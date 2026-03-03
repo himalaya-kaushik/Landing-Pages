@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LiveEventsCarousel, type LiveEvent } from "@/components/live-events-carousel";
 import { ReviewLinksButton } from "@/components/review-links-button";
+import { SplashHero } from "@/components/splash-hero";
 import { getDishes, getLiveEvents } from "@/lib/queries";
 
 export const revalidate = 60;
@@ -199,6 +200,8 @@ export default async function Home() {
       >
         Skip to main content
       </a>
+
+      <SplashHero />
 
       <header className="sticky top-0 z-50 border-b border-[#f1e2d3] bg-[#fffaf3]/95 backdrop-blur-sm">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
