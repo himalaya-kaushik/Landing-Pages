@@ -467,6 +467,57 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* ── Find Us — Google Maps ── */}
+        <section className="bg-[#fef5eb] py-20 sm:py-24">
+          <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-4xl font-semibold text-[#311f09] sm:text-5xl">
+                Find Us
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-[#5f4b3a]">
+                We&apos;re located in the heart of Sector 16, Panchkula. Drop by
+                anytime — great food and good times are always waiting.
+              </p>
+            </div>
+
+            <div className="mt-12 overflow-hidden rounded-3xl border border-[#edd9c6] bg-white shadow-[0_20px_60px_rgba(49,31,9,0.08)]">
+              {/* Embedded Google Map */}
+              <div className="h-[340px] sm:h-[400px]">
+                <iframe
+                  title="Falcon Cafe & Lounge location on Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.4!2d76.8383917!3d30.6958115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f93451a4d53d7%3A0xa9092e84e9a1ae69!2sFALCON%20Dine%26Lounge!5e0!3m2!1sen!2sin!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+
+              {/* Address bar below the map */}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#edd9c6] px-6 py-5 sm:px-8">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#8d5f34]">
+                    Address
+                  </p>
+                  <p className="mt-1 text-base text-[#311f09]">
+                    Falcon Cafe & Lounge, SCO 55, Sector 16, Panchkula, Haryana
+                  </p>
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/FALCON+Dine%26Lounge/@30.6958115,76.8383917,17z/data=!3m1!4b1!4m6!3m5!1s0x390f93451a4d53d7:0xa9092e84e9a1ae69!8m2!3d30.6958115!4d76.8383917!16s%2Fg%2F11gf5vw41m"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-[#ea6d27] px-7 py-3 font-semibold text-white transition hover:bg-[#d85e1e]"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* <section id="reservation" className="bg-[#fef5eb] py-20 sm:py-24">
           <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
             <div className="overflow-hidden rounded-4xl border border-[#edd9c6] bg-[#fff4e8] p-8 text-center shadow-[0_16px_50px_rgba(49,31,9,0.1)] sm:p-12">
@@ -522,7 +573,7 @@ export default async function Home() {
               Opening hours
             </h3>
             <p className="mt-3 text-sm text-[#5f4b3a]">
-              Monday - Sunday: 8:00 AM to 9:00 PM
+              Monday - Sunday: 8:00 AM to 11:00 PM
             </p>
           </div>
 
