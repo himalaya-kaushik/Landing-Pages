@@ -64,7 +64,7 @@ export function SplashHero() {
         }}
       >
         <Image
-          src="/images/main_image.png"
+          src="/images/main_image.jpg"
           alt="Falcon Cafe & Lounge — warm ambient dining"
           fill
           className="object-cover"

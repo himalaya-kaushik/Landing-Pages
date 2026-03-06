@@ -142,30 +142,27 @@ const restaurantSchema = {
   telephone: "0172 258 4965",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "245 Flavor Street",
-    addressLocality: "New York",
-    addressRegion: "NY",
-    postalCode: "10001",
-    addressCountry: "US",
+    streetAddress: "SCO 55, Sector 16",
+    addressLocality: "Panchkula",
+    addressRegion: "Haryana",
+    postalCode: "134109",
+    addressCountry: "IN",
   },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      dayOfWeek: [
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday",
+      ],
       opens: "08:00",
-      closes: "21:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "08:00",
-      closes: "21:00",
+      closes: "23:00",
     },
   ],
   sameAs: [
-    "https://www.instagram.com",
-    "https://www.facebook.com",
-    "https://www.twitter.com",
+    "https://www.instagram.com/falcon.dine.lounge/",
+    "https://www.facebook.com/FalconCafeLounge/",
+    "https://twitter.com/falcondine",
   ],
 };
 
@@ -281,7 +278,7 @@ export default async function Home() {
             <div className="relative">
               <div className="relative h-[440px] overflow-hidden rounded-[2.25rem] border border-[#edd7c2] bg-[#fbe7d1] shadow-[0_24px_80px_rgba(49,31,9,0.15)] sm:h-[560px]">
                 <Image
-                  src="/images/main_image.png"
+                  src="/images/main_image.jpg"
                   alt="Chef serving a fresh plate in restaurant ambience"
                   fill
                   className="object-cover"
@@ -397,7 +394,7 @@ export default async function Home() {
 
             {/* View full menu banner — links to the complete Zomato menu */}
             <a
-              href="http://zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/menu"
+              href="https://www.zomato.com/chandigarh/falcon-dine-lounge-sector-16-panchkula/menu"
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-16 flex items-center justify-center gap-3 rounded-2xl border border-[#edd9c6] bg-white px-8 py-5 shadow-[0_10px_30px_rgba(49,31,9,0.06)] transition-all duration-300 hover:border-[#ea6d27] hover:shadow-[0_14px_40px_rgba(234,109,39,0.12)]"
